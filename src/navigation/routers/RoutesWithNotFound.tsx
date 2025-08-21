@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+import Error404 from "../../pages/Error404/Error404";
 
 
 interface Props {
@@ -11,7 +12,7 @@ export const RoutesWithNotFound = ({children}:Props) => {
     <Routes>
         {children}
         <Route path="*" element={<Navigate to="/404" />}/>
-        <Route path="/404" element={<h1>404 Error</h1>}/>
+        <Route path="/404" element={<Error404 />}/>
     </Routes>
   )
 }
